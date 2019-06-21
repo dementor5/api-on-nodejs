@@ -45,6 +45,7 @@ const start = async () => {
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use('/artists', artistRouter);
   app.use(errorHandler.process);
+  // eslint-disable-next-line no-console
   app.listen(SERVER_PORT, SERVER_HOST, () => console.info(startMessage));
 };
 

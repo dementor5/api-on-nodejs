@@ -5,6 +5,7 @@ const dbConnect = async (url, MongoClient) => {
     await client.connect();
     db = client.db();
   } catch (e) {
+    // eslint-disable-next-line no-console
     console.error(e);
     process.exit(1);
   }

@@ -5,7 +5,7 @@ class ErrorHandler {
     this.process = this.process.bind(this);
   }
 
-  process(err, req, res, next) {
+  process(err, req, res) {
     switch (err.constructor) {
       case this.ValidationError:
         res.status(err.code).json(err.message);
@@ -14,6 +14,7 @@ class ErrorHandler {
         res.status(err.code).json(err.message);
         break;
       default:
+        // eslint-disable-next-line no-console
         console.error(err);
         res.sendStatus(500);
     }

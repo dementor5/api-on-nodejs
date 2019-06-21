@@ -4,8 +4,9 @@
   "description": "nodejs api server example",
   "main": "server.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node server.js",
-    "watch": "nodemon server.js"
+    "start": "cross-env NODE_ENV=production npm run test:lint && node server.js",
+    "watch": "nodemon server.js",
+    "test:lint": "eslint ."
   },
   "keywords": [],
   "author": "",
